@@ -1,0 +1,35 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.2"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <!-- Define persistence unit -->
+
+
+    <persistence-unit name="RecipeService">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <class>com.specificapps.compucooking.entities.Recipe</class>
+        <class>com.specificapps.compucooking.entities.Author</class>
+        <class>com.specificapps.compucooking.entities.Ingredient</class>
+        <class>com.specificapps.compucooking.entities.Geo</class>
+        <class>com.specificapps.compucooking.entities.Point</class>
+
+
+        <properties>
+
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url"    value="jdbc:postgresql://localhost:5432/compucooking" />
+
+            <!--<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost/compucooking"/> -->
+            <property name="eclipselink.ddl-generation" value="create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="database" />
+
+           <!-- <property name="javax.persistence.jdbc.user" value="root"/> -->
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+           <!-- <property name="javax.persistence.jdbc.password" value="mysqlRooter" /> -->
+            <property name="javax.persistence.jdbc.password" value="postgres" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
